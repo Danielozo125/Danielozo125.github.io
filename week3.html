@@ -1,36 +1,67 @@
 <!DOCTYPE html>
-<html>
-<head><title>Week 3 – Applications</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 3 – Application Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        img {
+            max-width: 100%;
+            border: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: #007acc;
+        }
+    </style>
+</head>
+
 <body>
 
-<a href="index.html">⬅ Back</a>
+<a href="index.html">⬅ Back to Home</a>
 
 <h1>Week 3 – Application Selection for Performance Testing</h1>
 
 <h2>Selected Applications</h2>
 <ul>
-<li>Stress-ng (CPU)</li>
-<li>Memtester (RAM)</li>
-<li>FIO (Disk I/O)</li>
-<li>Iperf3 (Network)</li>
-<li>Game Server (Server workload)</li>
+    <li><strong>Stress-ng</strong> – CPU and system stress testing</li>
+    <li><strong>Memtester</strong> – RAM testing</li>
+    <li><strong>FIO</strong> – Disk I/O benchmarking</li>
+    <li><strong>Iperf3</strong> – Network throughput testing</li>
+    <li><strong>Game Server</strong> – Simulated real-world workload</li>
 </ul>
 
 <h2>Installation</h2>
 <p>
-Applications were installed remotely via SSH using apt package management.
+The applications were installed remotely using SSH and the system package manager
+(<code>apt</code>). The image below shows successful installation output from the terminal.
 </p>
 
-<img src="screenshots/week3/install.png">
+<img src="screenshots/terminal-install.png" alt="Terminal showing installation of performance testing tools">
 
 <h2>Expected Resource Usage</h2>
 <p>
-Each application was selected to stress a specific system resource.
+Each tool targets a specific system component:
 </p>
+<ul>
+    <li>CPU stress via <strong>stress-ng</strong></li>
+    <li>Memory validation using <strong>memtester</strong></li>
+    <li>Disk performance measured with <strong>fio</strong></li>
+    <li>Network throughput tested using <strong>iperf3</strong></li>
+</ul>
 
 <h2>Reflection</h2>
 <p>
-This ensured realistic and measurable performance testing.
+This stage ensured that system performance could be measured accurately before
+moving on to advanced configuration and optimisation tasks.
 </p>
 
 </body>
