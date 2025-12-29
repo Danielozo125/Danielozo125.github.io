@@ -1,36 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Operating Systems Coursework Journal</title>
-    <style>
-        body { font-family: Arial; margin: 40px; background: #f4f4f4; }
-        h1, h2 { color: #2c3e50; }
-        ul { line-height: 1.8; }
-        a { text-decoration: none; color: #2980b9; font-weight: bold; }
-        .box { background: white; padding: 25px; border-radius: 8px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Operating Systems Coursework Journal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f6f7fb;
+      color: #111;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 36px 20px 60px; }
+    .header {
+      background: #fff;
+      border-radius: 14px;
+      padding: 26px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      margin-bottom: 18px;
+    }
+    .title { margin: 0 0 10px; font-size: 34px; }
+    .meta { margin: 6px 0; color: #444; }
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #2c3eeb;
+      font-weight: bold;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+    .card h2 { margin: 0 0 10px; font-size: 18px; }
+    .card p { margin: 0 0 14px; color: #444; line-height: 1.5; }
+
+    .weeks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    @media (max-width: 700px) { .weeks { grid-template-columns: 1fr; } }
+
+    .week-link {
+      display: block;
+      padding: 14px 14px;
+      border: 1px solid #e5e7ef;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #111;
+      transition: transform 0.08s ease, border-color 0.08s ease;
+    }
+    .week-link:hover {
+      transform: translateY(-1px);
+      border-color: #b9c2ff;
+    }
+    .week-title { font-weight: bold; margin-bottom: 6px; }
+    .week-desc { color: #555; font-size: 14px; margin: 0; }
+
+    .footer {
+      margin-top: 18px;
+      color: #666;
+      font-size: 13px;
+      text-align: center;
+    }
+    .tiny { color:#666; font-size: 13px; }
+    .btn {
+      display:inline-block;
+      text-decoration:none;
+      background:#222;
+      color:#fff;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:bold;
+      margin-right:10px;
+    }
+    .btn.secondary { background:#eef2ff; color:#2c3eeb; }
+  </style>
 </head>
 
 <body>
+  <div class="wrap">
 
-<h1>Operating Systems Coursework Journal</h1>
+    <div class="header">
+      <h1 class="title">Operating Systems Coursework Journal</h1>
+      <p class="meta"><strong>Student:</strong> Daniel Ozo</p>
+      <p class="meta"><strong>Module:</strong> Operating Systems</p>
+      <span class="badge">GitHub Pages Journal • Weeks 1–7</span>
 
-<p><strong>Student:</strong> Daniel Ozo</p>
-<p><strong>Module:</strong> Operating Systems</p>
+      <div style="margin-top:14px;">
+        <a class="btn" href="week1.html">Start at Week 1</a>
+        <a class="btn secondary" href="week7.html">Jump to Week 7</a>
+      </div>
 
-<div class="box">
-    <h2>Weekly Sections</h2>
-    <ul>
-        <li><a href="week1.html">Week 1 – Planning & OS Selection</a></li>
-        <li><a href="week2.html">Week 2 – Security Planning</a></li>
-        <li><a href="week3.html">Week 3 – Application Selection</a></li>
-        <li><a href="week4.html">Week 4 – System Configuration</a></li>
-        <li><a href="week5.html">Week 5 – Advanced Security</a></li>
-        <li><a href="week6.html">Week 6 – Performance Evaluation</a></li>
-        <li><a href="week7.html">Week 7 – Audit & Evaluation</a></li>
-    </ul>
-</div>
+      <p class="tiny" style="margin-top:14px;">
+        All server configuration tasks were performed via SSH from the workstation, in line with the coursework administrative constraint.
+      </p>
+    </div>
 
+    <div class="grid">
+      <div class="card">
+        <h2>Project Overview</h2>
+        <p>
+          This journal documents the planning, deployment, security hardening, monitoring setup, performance testing,
+          and security auditing of a Linux server environment across seven weekly phases.
+        </p>
+        <p class="tiny">
+          Evidence is provided through commands, configuration notes, scripts, and screenshots.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Weekly Navigation</h2>
+
+        <div class="weeks">
+          <a class="week-link" href="week1.html">
+            <div class="week-title">Week 1 — Planning & OS Selection</div>
+            <p class="week-desc">Architecture, distro choice, VM/network setup, CLI specs.</p>
+          </a>
+
+          <a class="week-link" href="week2.html">
+            <div class="week-title">Week 2 — Security Planning</div>
+            <p class="week-desc">Baseline checklist, threat model, testing methodology.</p>
+          </a>
+
+          <a class="week-link" href="week3.html">
+            <div class="week-title">Week 3 — Application Selection</div>
+            <p class="week-desc">Workload tools, install commands, monitoring strategy.</p>
+          </a>
+
+          <a class="week-link" href="week4.html">
+            <div class="week-title">Week 4 — System Configuration</div>
+            <p class="week-desc">SSH keys, firewall locked to workstation, users/admin evidence.</p>
+          </a>
+
+          <a class="week-link" href="week5.html">
+            <div class="week-title">Week 5 — Advanced Security</div>
+            <p class="week-desc">SELinux/AppArmor, auto-updates, fail2ban, scripts.</p>
+          </a>
+
+          <a class="week-link" href="week6.html">
+            <div class="week-title">Week 6 — Performance Evaluation</div>
+            <p class="week-desc">Metrics tables, graphs, bottlenecks, optimisations.</p>
+          </a>
+
+          <a class="week-link" href="week7.html">
+            <div class="week-title">Week 7 — Audit & Evaluation</div>
+            <p class="week-desc">Lynis + nmap results, service inventory, remaining risks.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>© Daniel Ozo — Operating Systems Coursework Journal</p>
+    </div>
+
+  </div>
 </body>
 </html>
