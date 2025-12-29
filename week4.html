@@ -1,35 +1,70 @@
 <!DOCTYPE html>
-<html>
-<head><title>Week 4 – Configuration</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Week 4 – Security Hardening</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; }
+    img { max-width: 100%; margin: 15px 0; border: 1px solid #ccc; border-radius: 6px; }
+    .section { background: white; padding: 25px; border-radius: 10px; }
+    nav { background:#222; padding:12px 15px; border-radius:8px; margin-bottom:20px; }
+    nav a { color:#fff; margin-right:14px; text-decoration:none; }
+    nav a:hover { text-decoration: underline; }
+    .caption { font-size: 0.95em; color: #444; margin-top: -5px; margin-bottom: 20px; }
+    code { background:#f1f1f1; padding:2px 6px; border-radius:6px; }
+    ul { line-height: 1.6; }
+  </style>
+</head>
+
 <body>
 
-<a href="index.html">⬅ Back</a>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="week1.html">Week 1</a>
+  <a href="week2.html">Week 2</a>
+  <a href="week3.html">Week 3</a>
+  <a href="week4.html">Week 4</a>
+  <a href="week5.html">Week 5</a>
+  <a href="week6.html">Week 6</a>
+  <a href="week7.html">Week 7</a>
+</nav>
 
-<h1>Week 4 – Initial System Configuration</h1>
+<div class="section">
+  <h1>Week 4 – Security Hardening</h1>
 
-<h2>SSH Configuration</h2>
-<p>
-SSH key-based authentication was configured and password login disabled.
-</p>
+  <h2>Objectives</h2>
+  <ul>
+    <li>Configure SSH using key-based authentication</li>
+    <li>Disable password login to reduce brute-force risk</li>
+    <li>Apply and document security configuration changes</li>
+  </ul>
 
-<img src="screenshots/week4/ssh.png">
+  <h2>SSH Key-Based Authentication</h2>
+  <p>
+    SSH was configured to use key-based authentication by ensuring a valid public key exists in
+    <code>~/.ssh/authorized_keys</code> for the administrative user. This approach improves security by
+    eliminating weak password-based authentication.
+  </p>
 
-<h2>Firewall</h2>
-<p>
-UFW was configured to allow SSH access only from the workstation IP.
-</p>
+  <h2>Password Login Disabled</h2>
+  <p>
+    Password-based SSH authentication was disabled in <code>/etc/ssh/sshd_config</code> by setting:
+    <code>PasswordAuthentication no</code>. This prevents brute-force password attacks and enforces the
+    use of SSH keys.
+  </p>
 
-<img src="screenshots/week4/firewall.png">
+  <img src="screenshots/ssh-password-disabled.png" alt="SSH configuration showing PasswordAuthentication set to no">
+  <div class="caption">Figure 1: SSH hardening evidence showing <code>PasswordAuthentication no</code> in <code>/etc/ssh/sshd_config</code>.</div>
 
-<h2>User Management</h2>
-<p>
-A non-root administrative user was created and sudo privileges assigned.
-</p>
-
-<h2>Reflection</h2>
-<p>
-The server was secured while maintaining remote administrative access.
-</p>
+  <h2>Reflection</h2>
+  <p>
+    This week improved the baseline security of the server by enforcing stronger authentication controls.
+    Disabling password authentication reduces the attack surface and supports secure remote administration
+    for the remaining coursework phases.
+  </p>
+</div>
 
 </body>
 </html>
+
