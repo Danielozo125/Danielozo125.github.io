@@ -12,8 +12,6 @@
     nav a { color:#fff; margin-right:14px; text-decoration:none; }
     nav a:hover { text-decoration: underline; }
     .caption { font-size: 0.95em; color: #444; margin-top: -5px; margin-bottom: 20px; }
-    code { background:#f1f1f1; padding:2px 6px; border-radius:6px; }
-    ul { line-height: 1.6; }
   </style>
 </head>
 
@@ -31,40 +29,50 @@
 </nav>
 
 <div class="section">
+
   <h1>Week 4 – Security Hardening</h1>
 
   <h2>Objectives</h2>
   <ul>
-    <li>Configure SSH using key-based authentication</li>
-    <li>Disable password login to reduce brute-force risk</li>
-    <li>Apply and document security configuration changes</li>
+    <li>Configure secure SSH access using key-based authentication</li>
+    <li>Disable password-based login</li>
+    <li>Restrict access using firewall rules</li>
   </ul>
 
   <h2>SSH Key-Based Authentication</h2>
   <p>
-    SSH was configured to use key-based authentication by ensuring a valid public key exists in
-    <code>~/.ssh/authorized_keys</code> for the administrative user. This approach improves security by
-    eliminating weak password-based authentication.
+    SSH access was secured by configuring public key authentication and disabling
+    password-based login. This ensures only authorised users with a valid private
+    key can access the system.
   </p>
 
-  <h2>Password Login Disabled</h2>
+  <img src="screenshots/ssh-password-disabled.png" alt="SSH configuration showing PasswordAuthentication disabled">
+  <div class="caption">
+    Figure 1: SSH configuration showing password authentication disabled.
+  </div>
+
+  <h2>Firewall Configuration (UFW)</h2>
   <p>
-    Password-based SSH authentication was disabled in <code>/etc/ssh/sshd_config</code> by setting:
-    <code>PasswordAuthentication no</code>. This prevents brute-force password attacks and enforces the
-    use of SSH keys.
+    The Uncomplicated Firewall (UFW) was configured to restrict SSH access to a
+    specific trusted IP address. This significantly reduces the attack surface
+    and prevents unauthorised remote access.
   </p>
 
-  <img src="screenshots/ssh-password-disabled.png" alt="SSH configuration showing PasswordAuthentication set to no">
-  <div class="caption">Figure 1: SSH hardening evidence showing <code>PasswordAuthentication no</code> in <code>/etc/ssh/sshd_config</code>.</div>
+  <img src="screenshots/ufw-ssh-allow.png" alt="UFW allowing SSH from a specific IP address">
+  <div class="caption">
+    Figure 2: UFW rule allowing SSH access only from a trusted IP address.
+  </div>
 
-  <h2>Reflection</h2>
+  <h2>Summary</h2>
   <p>
-    This week improved the baseline security of the server by enforcing stronger authentication controls.
-    Disabling password authentication reduces the attack surface and supports secure remote administration
-    for the remaining coursework phases.
+    These security measures strengthen the system by enforcing strong authentication
+    and limiting network exposure. The configuration ensures that only authorised
+    users can access the server while reducing the risk of attack.
   </p>
+
 </div>
 
 </body>
 </html>
+
 
